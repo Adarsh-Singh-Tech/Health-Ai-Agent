@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Health Analyzer</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-card">
+        <h1>🏥 AI Health Report Analyzer</h1>
+        <p>Smart insights from your medical reports</p>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="form-card">
+
+        <div class="grid">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+        </div>
+
+        <div class="grid">
+            <input type="number" placeholder="Age" required>
+            <input type="text" placeholder="Gender" required>
+        </div>
+
+        <input type="date" required>
+
+        <div class="upload-box">
+            <input type="file" name="file" required>
+        </div>
+
+        <button type="submit">Analyze Report</button>
+    </form>
+
+    <p class="warning">
+        ⚠️ This is not medical advice. Always consult a doctor.
+    </p>
+
+    {% if interpreter %}
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2>📊 Analysis</h2>
+            <div class="report-section">
+                {{ interpreter | safe }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚠️ Risk</h2>
+            <div class="report-section">
+                {{ risk | safe }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Advice</h2>
+            <div class="report-section">
+                {{ advice | safe }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="chart-grid">
+
+        {% if pie %}
+        <div class="chart-card">
+            <h3>🥧 Distribution</h3>
+            <img src="{{ pie }}">
+        </div>
+        {% endif %}
+
+        {% if line %}
+        <div class="chart-card">
+            <h3>📈 Trend</h3>
+            <img src="{{ line }}">
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="download-card">
+        <a href="/download">
+            <button>📄 Download Full Report</button>
+        </a>
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

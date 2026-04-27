@@ -1,0 +1,107 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #eef2f7, #dfe9f3);
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* HEADER */
+.header-card {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.form-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+    transform: scale(1.02);
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* REPORT CONTENT */
+.report-section {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CHARTS */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.chart-card img {
+    width: 100%;
+}
+
+/* DOWNLOAD */
+.download-card {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* WARNING */
+.warning {
+    text-align: center;
+    color: red;
+}

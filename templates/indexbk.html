@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Health Analyzer</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🏥 AI Health Report Analyzer</h1>
+    <p class="subtitle">Upload your medical report</p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="grid">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+        </div>
+
+        <div class="grid">
+            <input type="number" placeholder="Age" required>
+            <input type="text" placeholder="Gender" required>
+        </div>
+
+        <input type="date" required>
+
+        <div class="upload-box">
+            <input type="file" name="file" required>
+        </div>
+
+        <button type="submit">Analyze Report</button>
+
+    </form>
+
+    <p class="warning">
+        ⚠️ This is not medical advice. Consult a doctor.
+    </p>
+
+    {% if interpreter %}
+
+    <div class="result-card">
+
+        <div class="card">
+    <h2>📊 Health Report</h2>
+    <div class="report-section">
+        {{ report | safe }}
+    </div>
+</div>
+        <h2>⚠️ Risk</h2>
+        <div class="report-section">
+            {{ risk | safe }}
+        </div>
+
+        <h2>💡 Advice</h2>
+        <div class="report-section">
+            {{ advice | safe }}
+        </div>
+
+        <h2>📈 Chart</h2>
+        <img src="{{ chart }}" class="chart">
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
